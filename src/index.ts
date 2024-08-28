@@ -57,7 +57,7 @@ const app = new Elysia()
       body: t.Object({ task: t.String(), done: t.Boolean() }),
     }
   )
-  .listen(3000);
+  .listen(3000 || process.env.PORT);
 
 console.log(
   `🦊 Elysia is running at ${app.server?.hostname}:${app.server?.port}`
